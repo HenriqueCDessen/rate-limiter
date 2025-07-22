@@ -1,4 +1,4 @@
-package main_test
+package main
 
 import (
 	"context"
@@ -64,7 +64,7 @@ func makeRequest(client *http.Client, url string, headers map[string]string) (in
 
 func testIPRateLimiting() {
 	fmt.Println("\n=== Testando limitação por IP ===")
-	clearRedisKeys() // Limpa estado anterior
+	clearRedisKeys()
 
 	client := &http.Client{}
 	results := make(chan int, requestsPerIP)
