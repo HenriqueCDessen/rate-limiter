@@ -32,7 +32,7 @@ cd rate-limiter
 | `TOKEN_LIMIT`        | Limite de requisições por token (`API_KEY`)  | `10`             |
 
 
-### 3. Rode do Docker Compose
+### 3. Execute o Docker Compose
 ```bash
 docker compose up --build
 ```
@@ -55,7 +55,7 @@ go run load_validation.go
 
 ├── internal/
 │   ├── limiter/             # Lógica principal de rate limiting
-│   │   ├── redis_limiter.go # Implementação de Store usando Redis (com Allow, Block, IsBlocked)
+│   │   ├── redis_limiter.go # Implementação de Store usando Redis (com Allow, GetTokenLimit)
 │   │   └── store.go         # Interface Store para permitir diferentes implementações de limiter
 
 │   ├── middleware/          # Middleware Gin
